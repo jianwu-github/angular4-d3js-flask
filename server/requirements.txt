@@ -1,0 +1,6 @@
+Flask==0.12
+Flask-Script==0.6.7
+itsdangerous==0.24
+Jinja2==2.8
+MarkupSafe==0.23
+Werkzeug==0.12
