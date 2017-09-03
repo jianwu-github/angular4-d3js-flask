@@ -7,16 +7,24 @@
 
   <md-sidenav-container fxFlex>
     <md-sidenav mode="side" opened>
-      <md-nav-list>
-        <md-list-item><span>Processing Data</span></md-list-item>
-        <md-list-item><span>Training</span></md-list-item>
-        <md-list-item><span>Serving</span></md-list-item>
-        </md-nav-list>
+      <md-tab-group>
+        <md-tab label="Learning From Data">
+          <md-nav-list>
+          <md-list-item><span>Processing Data</span></md-list-item>
+          <md-list-item><span>Training</span></md-list-item>
+          <md-list-item><span>Serving</span></md-list-item>
+          </md-nav-list>
+        </md-tab>
+        <md-tab label="Settings">
+          <span>Settings</span>
+        </md-tab>
+      </md-tab-group>
     </md-sidenav>
-    <div class="content">
-      Loading ......
+    <div class="content" fxLayout="row" fxLayout.sm="column" fxLayoutGap="16px">
+      <md-card fxFlex="95">
+        <p>Loading ...</p>
+      </md-card>
     </div>
   </md-sidenav-container>
-
 </div>
 

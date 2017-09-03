@@ -4,5 +4,9 @@
 }
 
 md-sidenav {
-  width: 320px;
+  width: 350px;
+}
+
+.content {
+  padding: 12px;
 }
