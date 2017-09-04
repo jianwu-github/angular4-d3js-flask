@@ -2,7 +2,7 @@
 <div fxLayout="column" fxFlex>
 
   <md-toolbar color="primary">
-    <span>{{ title }}</span>
+    <span>{{ appTitle }}</span>
   </md-toolbar>
 
   <md-sidenav-container fxFlex>
@@ -10,19 +10,26 @@
       <md-tab-group>
         <md-tab label="Learning From Data">
           <md-nav-list>
-          <md-list-item><span>Processing Data</span></md-list-item>
-          <md-list-item><span>Training</span></md-list-item>
-          <md-list-item><span>Serving</span></md-list-item>
+            <md-list-item><a (click)="selectAction('Processing Data', 'Processing Training Data')"><span>Processing Data</span></a></md-list-item>
+            <md-list-item><a (click)="selectAction('DQN Training', 'Start DQN Training')"><span>DQN Training</span></a></md-list-item>
+            <md-list-item><a (click)="selectAction('Serving', 'Serving DQN Policy')"><span>Serving</span></a></md-list-item>
           </md-nav-list>
         </md-tab>
-        <md-tab label="Settings">
-          <span>Settings</span>
+        <md-tab label="Configuration">
+          <md-nav-list>
+            <md-list-item><a (click)="selectAction('Config Spark Cluster', 'Loading Spark Configuration')"><span>Config Spark Cluster</span></a></md-list-item>
+            <md-list-item><a (click)="selectAction('Config TensorFlow Workers', 'Loading TensorFlow Configuration')"><span>Config TensorFlow Workers</span></a></md-list-item>
+            <md-list-item><a (click)="selectAction('Config Kubernetes', 'Loading Kubernetes YAML Files')"><span>Config Kubernetes</span></a></md-list-item>
+          </md-nav-list>
         </md-tab>
       </md-tab-group>
     </md-sidenav>
     <div class="content" fxLayout="row" fxLayout.sm="column" fxLayoutGap="16px">
       <md-card fxFlex="95">
-        <p>Loading ...</p>
+        <md-card-title>{{ currAction }}</md-card-title>
+        <md-card-content>
+          <p>{{ currActionDetail}} ...</p>
+        </md-card-content>
       </md-card>
     </div>
   </md-sidenav-container>
