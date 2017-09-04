@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Distributed DQN Dashboard';
+  appTitle = 'Distributed DQN Dashboard';
+  currAction = 'Processing Data';
+  currActionDetail = 'Processing Training Data';
+
+  selectAction(action: string, detail: string) {
+    this.currAction = action;
+    this.currActionDetail = detail;
+  }
 }
