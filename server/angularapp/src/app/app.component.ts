@@ -7,11 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   appTitle = 'Distributed DQN Dashboard';
+  currActionId = 1;
   currAction = 'Processing Data';
   currActionDetail = 'Processing Training Data';
 
-  selectAction(action: string, detail: string) {
+  selectAction(actionId: number, action: string, detail: string) {
+    this.currActionId = actionId;
     this.currAction = action;
     this.currActionDetail = detail;
+  }
+
+  hasChartComp(): boolean {
+    return this.currActionId === 2 || this.currActionId === 3;
   }
 }

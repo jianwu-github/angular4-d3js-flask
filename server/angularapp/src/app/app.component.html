@@ -10,16 +10,16 @@
       <md-tab-group>
         <md-tab label="Learning From Data">
           <md-nav-list>
-            <md-list-item><a (click)="selectAction('Processing Data', 'Processing Training Data')"><span>Processing Data</span></a></md-list-item>
-            <md-list-item><a (click)="selectAction('DQN Training', 'Start DQN Training')"><span>DQN Training</span></a></md-list-item>
-            <md-list-item><a (click)="selectAction('Serving', 'Serving DQN Policy')"><span>Serving</span></a></md-list-item>
+            <md-list-item><a (click)="selectAction(1, 'Processing Data', 'Processing Training Data')"><span>Processing Data</span></a></md-list-item>
+            <md-list-item><a (click)="selectAction(2, 'DQN Training', 'Start DQN Training')"><span>DQN Training</span></a></md-list-item>
+            <md-list-item><a (click)="selectAction(3, 'Serving', 'Serving DQN Policy')"><span>Serving</span></a></md-list-item>
           </md-nav-list>
         </md-tab>
         <md-tab label="Configuration">
           <md-nav-list>
-            <md-list-item><a (click)="selectAction('Config Spark Cluster', 'Loading Spark Configuration')"><span>Config Spark Cluster</span></a></md-list-item>
-            <md-list-item><a (click)="selectAction('Config TensorFlow Workers', 'Loading TensorFlow Configuration')"><span>Config TensorFlow Workers</span></a></md-list-item>
-            <md-list-item><a (click)="selectAction('Config Kubernetes', 'Loading Kubernetes YAML Files')"><span>Config Kubernetes</span></a></md-list-item>
+            <md-list-item><a (click)="selectAction(4, 'Config Spark Cluster', 'Loading Spark Configuration')"><span>Config Spark Cluster</span></a></md-list-item>
+            <md-list-item><a (click)="selectAction(5, 'Config TensorFlow Workers', 'Loading TensorFlow Configuration')"><span>Config TensorFlow Workers</span></a></md-list-item>
+            <md-list-item><a (click)="selectAction(6, 'Config Kubernetes', 'Loading Kubernetes YAML Files')"><span>Config Kubernetes</span></a></md-list-item>
           </md-nav-list>
         </md-tab>
       </md-tab-group>
@@ -28,7 +28,8 @@
       <md-card fxFlex="95">
         <md-card-title>{{ currAction }}</md-card-title>
         <md-card-content>
-          <div class="d3-chart" #barchart style="height: 100px; width: 100px;"></div>
+          <p *ngIf="!hasChartComp()">{{ currActionDetail}} ...</p>
+          <app-barchart *ngIf="hasChartComp()"></app-barchart>
         </md-card-content>
       </md-card>
     </div>

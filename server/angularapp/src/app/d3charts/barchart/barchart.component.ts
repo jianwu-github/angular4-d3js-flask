@@ -9,7 +9,7 @@ import * as d3 from 'd3';
 })
 
 export class BarchartComponent implements OnInit {
-  @ViewChild('chart') private chartContainer: ElementRef;
+  @ViewChild('barchart') private chartContainer: ElementRef;
 
   private data: Array<any>;
 
@@ -35,6 +35,7 @@ export class BarchartComponent implements OnInit {
     }
 
     this.createChart();
+    this.updateChartWithData();
   }
 
   createChart() {
@@ -70,6 +71,45 @@ export class BarchartComponent implements OnInit {
       .attr('class', 'axis axis-y')
       .attr('transform', `translate(${this.margin.left}, ${this.margin.top})`)
       .call(d3.axisLeft(this.yScale));
+  }
+
+  updateChartWithData() {
+        // update scales & axis
+    this.xScale.domain(this.data.map(d => d[0]));
+    this.yScale.domain([0, d3.max(this.data, d => d[1])]);
+    this.colors.domain([0, this.data.length]);
+    this.xAxis.transition().call(d3.axisBottom(this.xScale));
+    this.yAxis.transition().call(d3.axisLeft(this.yScale));
+
+    let update = this.chart.selectAll('.bar')
+      .data(this.data);
+
+    // remove exiting bars
+    update.exit().remove();
+
+    // update existing bars
+    this.chart.selectAll('.bar').transition()
+      .attr('x', d => this.xScale(d[0]))
+      .attr('y', d => this.yScale(d[1]))
+      .attr('width', d => this.xScale.bandwidth())
+      .attr('height', d => this.height - this.yScale(d[1]))
+      .style('fill', (d, i) => this.colors(i));
+
+    // add new bars
+    update
+      .enter()
+      .append('rect')
+      .attr('class', 'bar')
+      .attr('x', d => this.xScale(d[0]))
+      .attr('y', d => this.yScale(0))
+      .attr('width', this.xScale.bandwidth())
+      .attr('height', 0)
+      .style('fill', (d, i) => this.colors(i))
+      .transition()
+      .delay((d, i) => i * 10)
+      .attr('y', d => this.yScale(d[1]))
+      .attr('height', d => this.height - this.yScale(d[1]));
+
   }
 
 }
