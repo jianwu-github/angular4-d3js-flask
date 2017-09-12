@@ -29,7 +29,8 @@
         <md-card-title>{{ currAction }}</md-card-title>
         <md-card-content>
           <p *ngIf="!hasChartComp()">{{ currActionDetail}} ...</p>
-          <app-barchart *ngIf="hasChartComp()"></app-barchart>
+          <app-barchart *ngIf="drawBarChart()"></app-barchart>
+          <app-linechart *ngIf="drawLineChart()"></app-linechart>
         </md-card-content>
       </md-card>
     </div>

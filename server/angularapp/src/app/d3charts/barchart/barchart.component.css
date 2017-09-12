@@ -1,14 +1,14 @@
 
-.d3-chart {
+.d3-bar-chart {
   width: 100%;
   height: 350px;
 }
 
-.d3-chart .axis path,
-.d3-chart .axis line {
+.d3-bar-chart .axis path,
+.d3-bar-chart .axis line {
   stroke: #191970;
 }
 
-.d3-chart .axis text {
+.d3-bar-chart .axis text {
   fill: #191970;
 }

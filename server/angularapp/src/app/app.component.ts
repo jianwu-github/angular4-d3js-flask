@@ -20,4 +20,12 @@ export class AppComponent {
   hasChartComp(): boolean {
     return this.currActionId === 2 || this.currActionId === 3;
   }
+
+  drawLineChart(): boolean {
+    return this.currActionId === 2;
+  }
+
+  drawBarChart(): boolean {
+    return this.currActionId === 3;
+  }
 }

@@ -29,7 +29,7 @@ export class BarchartComponent implements OnInit {
     this.data = [];
     for (let i = 0; i < (8 + Math.floor(Math.random() * 10)); i++) {
       this.data.push([
-        `Index ${i}`,
+        `Action ${i}`,
         Math.floor(Math.random() * 100)
       ]);
     }

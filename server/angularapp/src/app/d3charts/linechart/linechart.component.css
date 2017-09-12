@@ -1,0 +1,19 @@
+.d3-line-chart {
+  width: 100%;
+  height: 350px;
+}
+
+.d3-line-chart .axis path,
+.d3-line-chart .axis line {
+  stroke: #191970;
+}
+
+.d3-line-chart .axis text {
+  fill: #191970;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 2px;
+}
