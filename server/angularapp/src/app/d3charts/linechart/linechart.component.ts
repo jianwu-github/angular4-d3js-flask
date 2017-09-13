@@ -2,8 +2,8 @@ import { Component, OnInit, ViewChild, ElementRef, Input, ViewEncapsulation } fr
 import * as d3 from 'd3';
 
 interface LineChartData {
-    date: Date,
-    close: number
+    date: Date;
+    close: number;
 }
 
 @Component({
@@ -92,12 +92,17 @@ export class LinechartComponent implements OnInit {
       .call(d3.axisLeft(this.yScale));
 
     const valueLine = d3.line<LineChartData>()
-      .x((d: LineChartData) => { return this.xScale(d.date); })
-      .y((d: LineChartData) => { return this.yScale(d.close); });
+      .x((d: LineChartData) => this.xScale(d.date))
+      .y((d: LineChartData) => this.yScale(d.close));
 
     this.chart.append('path')
       .data([this.data])
       .attr('class', 'line')
+      .attr('fill', 'none')
+      .attr('stroke', 'steelblue')
+      .attr('stroke-linejoin', 'round')
+      .attr('stroke-linecap', 'round')
+      .attr('stroke-width', 2.0)
       .attr('d', valueLine);
   }
 
