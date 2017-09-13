@@ -10,12 +10,14 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import { AppComponent } from './app.component';
 import { BarchartComponent } from './d3charts/barchart/barchart.component';
 import { LinechartComponent } from './d3charts/linechart/linechart.component';
+import { NnchartComponent } from './d3charts/nnchart/nnchart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BarchartComponent,
-    LinechartComponent
+    LinechartComponent,
+    NnchartComponent
   ],
   imports: [
     BrowserModule,

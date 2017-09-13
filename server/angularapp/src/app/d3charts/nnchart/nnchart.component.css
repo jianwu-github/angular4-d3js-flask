@@ -1,0 +1,11 @@
+.neuralnet-chart {
+  width: 100%;
+  height: 350px;
+}
+
+.node:hover {
+  stroke: #999;
+  stroke-opacity: .6;
+  stroke-width: 4px;
+}
+

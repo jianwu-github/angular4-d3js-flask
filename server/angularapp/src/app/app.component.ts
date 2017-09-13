@@ -18,14 +18,18 @@ export class AppComponent {
   }
 
   hasChartComp(): boolean {
-    return this.currActionId === 2 || this.currActionId === 3;
+    return this.currActionId === 2 || this.currActionId === 3 || this.currActionId === 4;
   }
 
-  drawLineChart(): boolean {
+  drawNNChart(): boolean {
     return this.currActionId === 2;
   }
 
-  drawBarChart(): boolean {
+  drawLineChart(): boolean {
     return this.currActionId === 3;
+  }
+
+  drawBarChart(): boolean {
+    return this.currActionId === 4;
   }
 }
