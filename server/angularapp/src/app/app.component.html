@@ -12,8 +12,8 @@
           <md-nav-list>
             <md-list-item><a (click)="selectAction(1, 'Processing Data', 'Processing Training Data')"><span>Processing Data</span></a></md-list-item>
             <md-list-item><a (click)="selectAction(2, 'Q Network', 'Deep Neural Network for Q-Learning')"><span>Q Network</span></a></md-list-item>
-            <md-list-item><a (click)="selectAction(3, 'DQN Training', 'Start DQN Training')"><span>DQN Training</span></a></md-list-item>
-            <md-list-item><a (click)="selectAction(4, 'Serving', 'Serving DQN Policy')"><span>Serving</span></a></md-list-item>
+            <md-list-item><a (click)="selectAction(3, 'DQN Training', 'Running DQN Training')"><span>DQN Training</span></a></md-list-item>
+            <md-list-item><a (click)="selectAction(4, 'Serving', 'Serving Requests with DQN Policy')"><span>Serving</span></a></md-list-item>
           </md-nav-list>
         </md-tab>
         <md-tab label="Configuration">
@@ -28,6 +28,7 @@
     <div class="content" fxLayout="row" fxLayout.sm="column" fxLayoutGap="16px">
       <md-card fxFlex="95">
         <md-card-title>{{ currAction }}</md-card-title>
+        <md-card-subtitle *ngIf="hasChartComp()">{{ currActionDetail}}</md-card-subtitle>
         <md-card-content>
           <p *ngIf="!hasChartComp()">{{ currActionDetail}} ...</p>
           <app-nnchart *ngIf="drawNNChart()"></app-nnchart>

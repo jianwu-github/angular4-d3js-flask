@@ -9,7 +9,7 @@ export class AppComponent {
   appTitle = 'Distributed DQN Dashboard';
   currActionId = 1;
   currAction = 'Processing Data';
-  currActionDetail = 'Processing Training Data';
+  currActionDetail = 'Processing DQN Training Data';
 
   selectAction(actionId: number, action: string, detail: string) {
     this.currActionId = actionId;
