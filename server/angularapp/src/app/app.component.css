@@ -10,3 +10,9 @@ md-sidenav {
 .content {
   padding: 12px;
 }
+
+.valign-center {
+  display: inline-flex;
+  vertical-align: middle;
+  align-items: center;
+}
