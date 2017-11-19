@@ -6,10 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  appTitle = 'Distributed DQN Dashboard';
+  appTitle = 'Distributed Deep Learning Dashboard';
   currActionId = 1;
   currAction = 'Processing Data';
-  currActionDetail = 'Processing DQN Training Data';
+  currActionDetail = 'Processing Training Data';
 
   selectAction(actionId: number, action: string, detail: string) {
     this.currActionId = actionId;

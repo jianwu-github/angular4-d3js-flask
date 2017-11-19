@@ -14,9 +14,9 @@
           </ng-template>
           <md-nav-list>
             <md-list-item><a (click)="selectAction(1, 'Processing Data', 'Processing Training Data')"><div class="valign-center"><md-icon>input</md-icon>&nbsp;<span>Processing Data</span></div></a></md-list-item>
-            <md-list-item><a (click)="selectAction(2, 'Q Network', 'Deep Neural Network for Q-Learning')"><div class="valign-center"><md-icon>memory</md-icon>&nbsp;<span>Q Network</span></div></a></md-list-item>
-            <md-list-item><a (click)="selectAction(3, 'DQN Training', 'Running DQN Training')"><div class="valign-center"><md-icon>repeat</md-icon>&nbsp;<span>DQN Training</span></div></a></md-list-item>
-            <md-list-item><a (click)="selectAction(4, 'Serving', 'Serving Requests with DQN Policy')"><div class="valign-center"><md-icon>assessment</md-icon>&nbsp;<span>Serving</span></div></a></md-list-item>
+            <md-list-item><a (click)="selectAction(2, 'Deep Neural Network (DNN)', 'Deep Neural Network Model')"><div class="valign-center"><md-icon>memory</md-icon>&nbsp;<span>Deep Neural Network (DNN)</span></div></a></md-list-item>
+            <md-list-item><a (click)="selectAction(3, 'Training DNN', 'Training Deep Neural Network Model')"><div class="valign-center"><md-icon>repeat</md-icon>&nbsp;<span>Training DNN</span></div></a></md-list-item>
+            <md-list-item><a (click)="selectAction(4, 'Serving', 'Serving Requests with Deep Neural Network Model')"><div class="valign-center"><md-icon>assessment</md-icon>&nbsp;<span>Serving</span></div></a></md-list-item>
           </md-nav-list>
         </md-tab>
         <md-tab>
@@ -27,8 +27,8 @@
             <!--
             <md-list-item><a (click)="selectAction(5, 'Config Spark Cluster', 'Loading Spark Configuration')"><span>Config Spark Cluster</span></a></md-list-item>
             -->
-            <md-list-item><a (click)="selectAction(6, 'Config Kubernetes', 'Loading Kubernetes YAML Files')"><div class="valign-center"><md-icon>storage</md-icon>&nbsp;<span>Config Kubernetes</span></div></a></md-list-item>
-            <md-list-item><a (click)="selectAction(7, 'Config TensorFlow PS and Workers', 'Loading TensorFlow Configuration')"><div class="valign-center"><md-icon>computer</md-icon>&nbsp;<span>Config TensorFlow PS and Workers</span></div></a></md-list-item>
+            <md-list-item><a (click)="selectAction(6, 'Config Kubernetes Cluster', 'Loading Kubernetes Cluster Configuration')"><div class="valign-center"><md-icon>storage</md-icon>&nbsp;<span>Config Kubernetes Cluster</span></div></a></md-list-item>
+            <md-list-item><a (click)="selectAction(7, 'Config TensorFlow PS and Workers', 'Loading TensorFlow PS and Worker Pods Configuration')"><div class="valign-center"><md-icon>computer</md-icon>&nbsp;<span>Config TensorFlow PS and Workers</span></div></a></md-list-item>
           </md-nav-list>
         </md-tab>
       </md-tab-group>
